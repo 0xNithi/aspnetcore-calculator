@@ -1,0 +1,84 @@
+﻿@{
+  ViewData["Title"] = "MrNithi - Calculator";
+}
+
+<div class="max-w-sm mx-auto space-y-1">
+  <div class="flex flex-col items-end justify-center w-full h-16 p-4 bg-gray-200 rounded dark:bg-gray-700">
+    <span id="problem" class="text-sm"></span>
+    <span id="answer" class="text-xl">0</span>
+  </div>
+  <table class="w-full text-center table-fixed">
+    <tbody>
+      <tr>
+        <td>
+          <button class="w-full h-8 bg-gray-200 rounded hover:opacity-80 dark:bg-gray-700" value="C">C</button>
+        </td>
+        <td>
+          <button class="w-full h-8 bg-gray-200 rounded hover:opacity-80 dark:bg-gray-700" value="×">×</button>
+        </td>
+        <td>
+          <button class="w-full h-8 bg-gray-200 rounded hover:opacity-80 dark:bg-gray-700" value="÷">÷</button>
+        </td>
+        <td>
+          <button class="w-full h-8 bg-gray-200 rounded hover:opacity-80 dark:bg-gray-700" value="backspace">
+            <svg xmlns="http://www.w3.org/2000/svg" class="inline w-4 h-4" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M12 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2M3 12l6.414 6.414a2 2 0 001.414.586H19a2 2 0 002-2V7a2 2 0 00-2-2h-8.172a2 2 0 00-1.414.586L3 12z" />
+            </svg>
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button class="w-full h-8 bg-gray-300 rounded hover:opacity-80 dark:bg-gray-600" value="7">7</button>
+        </td>
+        <td>
+          <button class="w-full h-8 bg-gray-300 rounded hover:opacity-80 dark:bg-gray-600" value="8">8</button>
+        </td>
+        <td>
+          <button class="w-full h-8 bg-gray-300 rounded hover:opacity-80 dark:bg-gray-600" value="9">9</button>
+        </td>
+        <td>
+          <button class="w-full h-8 bg-gray-200 rounded hover:opacity-80 dark:bg-gray-700" value="−">−</button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button class="w-full h-8 bg-gray-300 rounded hover:opacity-80 dark:bg-gray-600" value="4">4</button>
+        </td>
+        <td>
+          <button class="w-full h-8 bg-gray-300 rounded hover:opacity-80 dark:bg-gray-600" value="5">5</button>
+        </td>
+        <td>
+          <button class="w-full h-8 bg-gray-300 rounded hover:opacity-80 dark:bg-gray-600" value="6">6</button>
+        </td>
+        <td>
+          <button class="w-full h-8 bg-gray-200 rounded hover:opacity-80 dark:bg-gray-700" value="+">+</button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button class="w-full h-8 bg-gray-300 rounded hover:opacity-80 dark:bg-gray-600" value="1">1</button>
+        </td>
+        <td>
+          <button class="w-full h-8 bg-gray-300 rounded hover:opacity-80 dark:bg-gray-600" value="2">2</button>
+        </td>
+        <td>
+          <button class="w-full h-8 bg-gray-300 rounded hover:opacity-80 dark:bg-gray-600" value="3">3</button>
+        </td>
+        <td rowspan="2" class="h-16">
+          <button class="w-full h-full bg-gray-400 rounded hover:opacity-80 dark:bg-gray-500" value="=">=</button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <button class="w-full h-8 bg-gray-300 rounded hover:opacity-80 dark:bg-gray-600" value="0">0</button>
+        </td>
+        <td>
+          <button class="w-full h-8 bg-gray-300 rounded hover:opacity-80 dark:bg-gray-600" value=".">.</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
