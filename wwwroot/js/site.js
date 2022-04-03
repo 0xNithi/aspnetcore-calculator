@@ -29,7 +29,7 @@ function initCalculator() {
     document.getElementsByTagName("table")[0].getElementsByTagName("button")
   )) {
     button.onclick = (ev) => {
-      let value = ev.target.value;
+      let value = ev.currentTarget.value;
 
       if (value === "C") {
         context = "";
@@ -38,27 +38,31 @@ function initCalculator() {
           context = context.slice(0, -1);
         }
       } else if (value === "=") {
-        const xhttp = new XMLHttpRequest();
-        xhttp.onload = function () {
-          if (this.status === 200) {
-            document.getElementById("problem").innerHTML = context;
-            document.getElementById("answer").innerHTML = this.responseText;
+        if (context.length) {
+          const xhttp = new XMLHttpRequest();
+          xhttp.onload = function () {
+            if (this.status === 200) {
+              document.getElementById("problem").innerHTML = context;
+              document.getElementById("answer").innerHTML = this.responseText;
 
-            context = this.responseText;
-          } else {
-            document.getElementById("problem").innerHTML = "ERROR";
-          }
-        };
-        xhttp.open("POST", "/api/calculate");
-        xhttp.setRequestHeader("Content-type", "application/json");
-        xhttp.send(
-          JSON.stringify({
-            context: context
-              .replace("×", "*")
-              .replace("÷", "/")
-              .replace("−", "-"),
-          })
-        );
+              context = this.responseText;
+            } else {
+              document.getElementById("problem").innerHTML = "ERROR";
+            }
+          };
+          xhttp.open("POST", "/api/calculate");
+          xhttp.setRequestHeader("Content-type", "application/json");
+          xhttp.send(
+            JSON.stringify({
+              context: context
+                .replace("×", "*")
+                .replace("÷", "/")
+                .replace("−", "-"),
+            })
+          );
+        } else {
+          document.getElementById("problem").innerHTML = "ERROR";
+        }
       } else {
         context += value;
       }
